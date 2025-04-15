@@ -13,4 +13,5 @@ During this Javascript learning journey, I plan on learning about following aspe
 - boolean
 - Uppercase 
 - lowercase
-- modal
+- modal 
+- password(TaSK123);
