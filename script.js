@@ -1,3 +1,4 @@
+// change input types for show password 
 function showPassword() {
     const password =  document.getElementById("password");
     if(password.type === "password") {
@@ -10,27 +11,25 @@ function showPassword() {
 
 function clickHandel() {
    const correct = document.getElementById("correct");
-   const icorrect = document.getElementById("missing");
     const incorrect = document.getElementById("incorrect");
     const pas = document.getElementById("password");
     const email = document.getElementById("email");
 
     if (pas.value === "TeST123" ) {
-        correct.style.display = "flex";  
+        correct.style.display = "flex"; 
+        // ste time  for reload page  
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
     }
     else {
         incorrect.style.display = "flex";  
     }
-    if (pas.value.trim() === "") {
-        document.getElementById("button").disabled = true;
-    } 
-    else {
-        document.getElementById("button").disabled = false;
-    }
+
     if (!email.value.includes("@")) {
-        icorrect.style.display = "flex";
+        incorrect.style.display = "flex";
     }
      else {
-        icorrect.style.display = "none";
+        incorrect.style.display = "none";
     }
 };
