@@ -10,26 +10,34 @@ function togglePasswordVisibility() {
 }
 
 
-function submitButtonClickHandler() {
-    const lblCorrect = document.getElementById("lblCorrect");
-    const lblIncorrect = document.getElementById("lblIncorrect");
-    const txtPassword = document.getElementById("txtPassword");
-    const txtEmail = document.getElementById("txtEmail");
 
-    const isEmailValid = txtEmail.value.includes("@");
-    const isPasswordValid = txtPassword.value === "TeST123";
+function submitButtonClickHandler() {
+        const lblCorrect = document.getElementById("lblCorrect");
+        const lblIncorrect = document.getElementById("lblIncorrect");
+        const txtPassword = document.getElementById("txtPassword");
+        const txtEmail = document.getElementById("txtEmail");
     
-    lblIncorrect.style.display = isEmailValid&&isPasswordValid ? "none" : "flex";
+        const passwordValue = txtPassword.value;
     
-    // TODO: Only reload page, if both Email and Password are correct
-    if (txtPassword.value === "TeST123" ) {
-        lblCorrect.style.display = "flex"; 
-        // Set time for reload page  
-        setTimeout(() => {
-            location.reload();
-        }, 3000);
-    }
-    else {
-        lblIncorrect.style.display = "flex"; 
-    }
+        const isEmailValid = txtEmail.checkValidity(); 
+        const isPasswordEntered = passwordValue !== "";
+        const isPasswordCorrect = passwordValue === "TeST123";
+    
+        // Hide/show incorrect label only if password is entered
+        if (isPasswordEntered && (!isEmailValid || !isPasswordCorrect)) {
+            lblIncorrect.style.display = "flex";
+        } 
+        else {
+            lblIncorrect.style.display = "none";
+        }    
+        // Show correct label if both email and password are valid
+        if (isEmailValid && isPasswordCorrect) {
+            lblCorrect.style.display = "flex";
+            // TODO: reload page or redirect here if needed
+        }
+         else {
+            lblCorrect.style.display = "none";
+        }
+    
+    
 };

@@ -5,6 +5,8 @@
     <title>Credentials Validation Exercise</title>
     <link rel="icon" type="image/x-icon" href="/images/email.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="h-screen w-screen bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 flex items-center  justify-center">
 </body>
@@ -14,7 +16,6 @@
         <form id="form" class="p-8 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 text-white rounded-lg" action="">
             <header class="text-5xl mb-12 text-center font-bold max-sm:text-4xl max-sm:mb-5 ">Login</header>
 
-            
             <!-- Input Controls Section -->
             <div class="flex flex-col">
                 <!-- Email -->
@@ -23,28 +24,31 @@
                         class="bg-white text-gray-700 py-3 placeholder:text-lg placeholder:text-gray-400 placeholder:font-medium px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 max-sm:px-4 max-sm:py-2 max-sm:placeholder:text-base"/>
 
                 <!-- Password -->
-                <label  class="text-2xl mt-5 max-sm:mt-4 max-sm:text-xl" for="password">Password:</label>
-                <input  type="password" id="txtPassword" maxlength="7" placeholder="Enter password"
-                        class="bg-white text-gray-700 mt-3 py-3 px-6 placeholder:font-medium placeholder:text-gray-400 placeholder:text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 max-sm:px-4 max-sm:py-2 max-sm:placeholder:text-base"/>
+                <label class="text-2xl mt-5 max-sm:mt-4 max-sm:text-xl" for="password">Password:</label>
+                <div class="relative">
+                    <input type="password" id="txtPassword" maxlength="7" placeholder="Enter password"
+                        class="bg-white text-gray-700 mt-3 py-3 px-6 placeholder:font-medium placeholder:text-gray-400 placeholder:text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 max-sm:px-4 max-sm:py-2 max-sm:placeholder:text-base w-full" />
 
-                <!-- Show/Hide Password -->
-                <div class="text-lg mt-3 font-normal max-sm:text-base">
-                    <input class="mr-2 w-4 h-4" type="checkbox" onclick="togglePasswordVisibility()">Show Password</input>
+               <!-- Show/Hide Password -->
+                    <ion-icon name="eye-off" id="eyeIcon" onclick="togglePasswordVisibility()"
+                        class="absolute right-4  top-[60%] transform text-2xl -translate-y-1/2 text-gray-500 cursor-pointer"></ion-icon>
                 </div>
+                        </input>
 
                 <!-- Validation Messages -->
-                <label id="lblIncorrect" class="text-center text-xl hidden text-red-500 mt-3 max-sm:text-base">Password is Incorrect</label>
-                <label id="lblCorrect" class="text-center text-xl hidden text-green-500 max-sm:text-base mt-3">All Good :)</label>
+                <label id="lblIncorrect" class="text-center text-xl hidden mt-3 max-sm:text-base">create strong password with a mix of latter,number</label>
+                <label id="lblCorrect" class="text-center text-xl hidden  max-sm:text-base mt-3">All Good :)</label>
             </div>
 
             <!-- Submit Button -->
             <button type="submit"  id="btnSubmit" onclick="submitButtonClickHandler()"
                     class="px-4 py-3 text-xl w-full mt-6 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 active:bg-gradient-to-l active:from-pink-600 active:to-purple-600 transition-all duration-300 cursor-pointer max-sm:px-3 max-sm:py-3 max-sm:mt-5 max-sm:text-[17px]">
-                    SignIn
+                    SignIn 
             </button>
         </form>
     </div>
     <!-- My Custom Sign-in script -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
