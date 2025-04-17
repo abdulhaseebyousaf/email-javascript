@@ -1,35 +1,35 @@
-// change input types for show password 
-function showPassword() {
-    const password =  document.getElementById("password");
-    if(password.type === "password") {
-        password.type = "text";
+// This function shows/hides password by changing type attribute 
+function togglePasswordVisibility() {
+    const txtPassword =  document.getElementById("txtPassword");
+    if(txtPassword.type === "password") {
+        txtPassword.type = "text";
     }
     else {
-        password.type = "password";
+        txtPassword.type = "password";
     }
-};
+}
 
-function clickHandel() {
-   const correct = document.getElementById("correct");
-    const incorrect = document.getElementById("incorrect");
-    const pas = document.getElementById("password");
-    const email = document.getElementById("email");
 
-    if (pas.value === "TeST123" ) {
-        correct.style.display = "flex"; 
-        // ste time  for reload page  
+function submitButtonClickHandler() {
+    const lblCorrect = document.getElementById("lblCorrect");
+    const lblIncorrect = document.getElementById("lblIncorrect");
+    const txtPassword = document.getElementById("txtPassword");
+    const txtEmail = document.getElementById("txtEmail");
+
+    const isEmailValid = txtEmail.value.includes("@");
+    const isPasswordValid = txtPassword.value === "TeST123";
+    
+    lblIncorrect.style.display = isEmailValid&&isPasswordValid ? "none" : "flex";
+    
+    // TODO: Only reload page, if both Email and Password are correct
+    if (txtPassword.value === "TeST123" ) {
+        lblCorrect.style.display = "flex"; 
+        // Set time for reload page  
         setTimeout(() => {
             location.reload();
         }, 3000);
     }
     else {
-        incorrect.style.display = "flex";  
-    }
-
-    if (!email.value.includes("@")) {
-        incorrect.style.display = "flex";
-    }
-     else {
-        incorrect.style.display = "none";
+        lblIncorrect.style.display = "flex"; 
     }
 };
