@@ -1,25 +1,20 @@
-# Credentials Validation Exercise
+# Login Page - Credentials Validation Exercise
 
-This project is a simple **login form interface** built with HTML,  and JavaScript, focused on **manual JavaScript-based form validation** for credentials (email and password).
+This is a simple and stylish login page with email and password validation, built using HTML, JavaScript, and Tailwind CSS.
 
 ##  Features
 
-- Email and password input fields
-- Show/hide password functionality
-- All validation logic handled strictly through JavaScript
-- Submit button remains disabled until inputs are correctly filled
-- Success message on valid form submission
-- Prevention of submission on invalid input
-
-##  Validation Rules
-
-- Email must follow a valid email format 
-- Password must be at least 7 characters 
-- No special characters allowed in email 
-- Both fields must be correctly filled for submission to be allowed
+- **Email Validation**: Ensures the entered email is valid using HTML5 form validation.
+- **Password Validation**: Checks that the password matches a predefined value (`TeST123`) and is at least 7 characters long.
+- **Real-Time Input Sanitization**: Removes special characters from the email input (only allows letters, digits, dot, space, and `@`).
+- **Password Visibility Toggle**: Allows users to show or hide the password by clicking the eye icon.
+- **Responsive Design**: Looks good on mobile, tablet, and desktop.
+- **Feedback Labels**:
+  -  Shows a green "All Good :)" message when inputs are correct.
+  -  Displays an error message if inputs are invalid.
 
 ##  How to Run
 
-1. Clone this repository:
+-  Clone this repository:
    ```bash
    git clone https://github.com/abdulhaseebyousaf/email-javascript
