@@ -1,44 +1,48 @@
 // This function shows/hides password by changing type attribute 
 function togglePasswordVisibility() {
-    const txtPassword =  document.getElementById("txtPassword");
-    if(txtPassword.type === "password") {
-        txtPassword.type = "text";
+    const textPassword =  document.getElementById("txtPassword");
+    if(textPassword.type === "password") {
+        textPassword.type = "text";
     }
     else {
-        txtPassword.type = "password";
+        textPassword.type = "password";
     }
-}
+};
+
 // submit button 
 function submitButtonClickHandler() {
-        const lblCorrect = document.getElementById("lblCorrect");
-        const lblIncorrect = document.getElementById("lblIncorrect");
-        const txtPassword = document.getElementById("txtPassword");
-        const txtEmail = document.getElementById("txtEmail");
+        const textPassword = document.getElementById("txtPassword");
+        const textEmail = document.getElementById("txtEmail");
 
-        const passwordValue = txtPassword.value;
-    const isEmailValid = txtEmail.checkValidity();
+    const passwordValue = textPassword.value;
+    const emailValue = textEmail.value;
+
+    const isEmailValid = textEmail.checkValidity() && emailValue === "Haseeb2005@gmail.com";
+    
     const isPasswordEntered = passwordValue !== "";
     const isPasswordCorrect = passwordValue === "TeST123";
 
     // Hide/show incorrect label only if password is entered
     if (isPasswordEntered && (!isEmailValid || !isPasswordCorrect)) {
-        lblIncorrect.style.display = "flex";
+        document.getElementById("modal").style.display = "flex";            
     } 
     else {
-        lblIncorrect.style.display = "none";
-    }    
-
+        document.getElementById("modal").style.display = "none";
+    }   
     // Show correct label if both email and password are valid
-    if (isEmailValid && isPasswordCorrect) {
-        lblCorrect.style.display = "flex";
+    if (isEmailValid && isPasswordCorrect) {        
+        document.getElementById("secondModal").style.display = "flex";
     }
     else {
-        lblCorrect.style.display = "none";
+        document.getElementById("secondModal").style.display = "none";
     }
     };
-    
+    // for close modal 
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    } 
     // for two special charater not add
     document.addEventListener('input', function(_event) {
         const inputEmail = document.getElementById("txtEmail").value;
-        document.getElementById("txtEmail").value = inputEmail.replace(/[^a-zA-Z0-9 .@]/g,"");
+        document.getElementById("txtEmail").value = inputEmail.replace(/[^a-zA-Z0-9 .@]/,"");
         });
