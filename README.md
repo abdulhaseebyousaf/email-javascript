@@ -21,7 +21,7 @@ A simple HTML, CSS (Tailwind), and JavaScript-based login form with client-side 
 ## ⚙️ How It Works
 
 1. Enter your **email** and **password**.
-2. The email must match: `Haseeb2005@gmail.com`
+2. The email must match: `ahaseeb2005@gmail.com`
 3. The password must match: `TeST123`
 4. Input fields are validated on submission:
    - If invalid: an "Invalid Input" modal appears.
