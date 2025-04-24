@@ -31,7 +31,7 @@ A simple HTML, CSS (Tailwind), and JavaScript-based login form with client-side 
 
 - Email input restricts invalid characters using JavaScript:
   ```js
-  inputEmail.replace(/[^a-zA-Z0-9 .@]/, "")
+  inputEmail.replace(/[^a-zA-Z0-9 .@]/g, "")
 
  ## Credentials for Testing
 Email: Haseeb2005@gmail.com

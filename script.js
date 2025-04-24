@@ -23,19 +23,17 @@ function submitButtonClickHandler() {
     
     // Hide/show incorrect label only if password is entered
     if (isPasswordEntered && (!isEmailValid || !isPasswordCorrect)) {
-        document.getElementById("modal").style.display = "flex";
+            document.getElementById("modal").style.display = "flex";
+         
     } 
     else {
         document.getElementById("modal").style.display = "none";
     }   
     // Show correct label if both email and password are valid
     if (isEmailValid && isPasswordCorrect) {
-            document.getElementById("secondModal").style.display = "flex";          
+            document.getElementById("secondModal").style.display = "flex";
+        
         }
-        else {
-        document.getElementById("secondModal").style.display = "none";
-    }
-
 };
 // for close modal 
 function closeModal() {
@@ -45,9 +43,8 @@ function closeModal() {
     function closeSecondModal() {
         document.getElementById("secondModal").style.display = "none";
     } 
-
     // for two special charater not add
     document.addEventListener('input', function(_event) {
         const inputEmail = document.getElementById("txtEmail").value;
-        document.getElementById("txtEmail").value = inputEmail.replace(/[^a-zA-Z0-9 .@]/,"");
+        document.getElementById("txtEmail").value = inputEmail.replace(/[^a-zA-Z0-9 .@]/g,"");
         });
