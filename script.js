@@ -8,39 +8,44 @@ function togglePasswordVisibility() {
         textPassword.type = "password";
     }
 };
-
 // submit button 
 function submitButtonClickHandler() {
-        const textPassword = document.getElementById("txtPassword");
-        const textEmail = document.getElementById("txtEmail");
-
+    const textPassword = document.getElementById("txtPassword");
+    const textEmail = document.getElementById("txtEmail");
+  
     const passwordValue = textPassword.value;
     const emailValue = textEmail.value;
-
-    const isEmailValid = textEmail.checkValidity() && emailValue === "Haseeb2005@gmail.com";
+    
+    const isEmailValid = textEmail.checkValidity() && emailValue === "ahaseeb2005@gmail.com";
     
     const isPasswordEntered = passwordValue !== "";
     const isPasswordCorrect = passwordValue === "TeST123";
-
+    
     // Hide/show incorrect label only if password is entered
     if (isPasswordEntered && (!isEmailValid || !isPasswordCorrect)) {
-        document.getElementById("modal").style.display = "flex";            
+        document.getElementById("modal").style.display = "flex";
     } 
     else {
         document.getElementById("modal").style.display = "none";
     }   
     // Show correct label if both email and password are valid
-    if (isEmailValid && isPasswordCorrect) {        
-        document.getElementById("secondModal").style.display = "flex";
-    }
-    else {
+    if (isEmailValid && isPasswordCorrect) {
+            document.getElementById("secondModal").style.display = "flex";          
+        }
+        else {
         document.getElementById("secondModal").style.display = "none";
     }
-    };
-    // for close modal 
-    function closeModal() {
+
+};
+// for close modal 
+function closeModal() {
         document.getElementById("modal").style.display = "none";
+    }
+    // for close second modal 
+    function closeSecondModal() {
+        document.getElementById("secondModal").style.display = "none";
     } 
+
     // for two special charater not add
     document.addEventListener('input', function(_event) {
         const inputEmail = document.getElementById("txtEmail").value;
