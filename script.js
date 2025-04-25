@@ -38,10 +38,12 @@ function submitButtonClickHandler() {
 // for close modal 
 function closeModal() {
         document.getElementById("modal").style.display = "none";
+        location.reload();
     }
     // for close second modal 
     function closeSecondModal() {
         document.getElementById("secondModal").style.display = "none";
+        location.reload();
     } 
     // for two special charater not add
     document.addEventListener('input', function(_event) {
