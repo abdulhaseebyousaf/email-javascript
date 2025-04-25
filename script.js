@@ -9,7 +9,8 @@ function togglePasswordVisibility() {
     }
 };
 // submit button 
-function submitButtonClickHandler() {
+function submitButtonClickHandler(event) {
+   event.preventDefault(); 
     const textPassword = document.getElementById("txtPassword");
     const textEmail = document.getElementById("txtEmail");
   
@@ -24,7 +25,7 @@ function submitButtonClickHandler() {
     // Hide/show incorrect label only if password is entered
     if (isPasswordEntered && (!isEmailValid || !isPasswordCorrect)) {
             document.getElementById("modal").style.display = "flex";
-         
+         console.log("email incorrect");
     } 
     else {
         document.getElementById("modal").style.display = "none";
@@ -50,3 +51,6 @@ function closeModal() {
         const inputEmail = document.getElementById("txtEmail").value;
         document.getElementById("txtEmail").value = inputEmail.replace(/[^a-zA-Z0-9 .@]/g,"");
         });
+
+        
+        
