@@ -18,7 +18,7 @@ A simple HTML, CSS (Tailwind), and JavaScript-based login form with client-side 
 - Ionicons for icons
 
 
-## ⚙️ How It Works
+##  How It Works
 
 1. Enter your **email** and **password**.
 2. The email must match: `ahaseeb2005@gmail.com`
@@ -34,8 +34,8 @@ A simple HTML, CSS (Tailwind), and JavaScript-based login form with client-side 
   inputEmail.replace(/[^a-zA-Z0-9 .@]/g, "")
 
  ## Credentials for Testing
-Email: Haseeb2005@gmail.com
-Password: TeST123
+- Email: Haseeb2005@gmail.com 
+- Password: TeST123
 
 ##  How to Run
 
